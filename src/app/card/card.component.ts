@@ -5,6 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
+
 export class CardComponent implements OnInit {
 
   @Input() foodTitle: string = ""

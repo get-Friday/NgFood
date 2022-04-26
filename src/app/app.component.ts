@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Ng-Food';
-  cheese = 'Queijo';
-  cheeseDesc = 'Queijo bom';
-  fish = 'Peixe';
-  fishDesc = 'Peixe azul as vezes verde';
 }
