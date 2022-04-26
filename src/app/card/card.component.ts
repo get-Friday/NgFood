@@ -10,10 +10,15 @@ export class CardComponent implements OnInit {
 
   @Input() foodTitle: string = ""
   @Input() foodDescription: string = ""
+  @Input() foodPhoto: string = ""
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  alert(name: string) {
+    alert(name)
   }
 
 }

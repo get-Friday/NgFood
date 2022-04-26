@@ -1,10 +1,10 @@
 <li>
   <div class="card" style="width: 18rem;">
-    <img src="https://via.placeholder.com/150" class="card-img-top" alt="placeholder">
+    <img [src]="foodPhoto" class="card-img-top" alt="placeholder">
     <div class="card-body">
       <h5 class="card-title">{{foodTitle}}</h5>
       <p class="card-text">{{foodDescription}}</p>
-      <a href="#" class="btn btn-primary">Comprar</a>
+      <a href="#" class="btn btn-primary" (click)="alert(foodTitle)" >Comprar</a>
     </div>
   </div>
 </li>

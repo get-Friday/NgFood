@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Product {
-  title: string;
-  description: string;
-  photo: string;
-  price: number;
-}
+import Product from 'src/models/product.models';
+import PRODUCTS_MOCK from 'src/utils/product-mock';
 
 @Component({
   selector: 'NGF-content',
@@ -14,20 +9,7 @@ interface Product {
 })
 export class ContentComponent implements OnInit {
 
-  productList: Product[] = [
-    {
-      title: 'Peixe',
-      description: 'Peixe pacu grande 1.5kg',
-      photo: 'via.placeholder.com/150',
-      price: 15
-    },
-    {
-      title: 'Queijo',
-      description: 'Queijo redondo amarelo 30cm diametro 1kg',
-      photo: 'via.placeholder.com/150',
-      price: 27
-    },
-  ]
+  productList: Product[] = PRODUCTS_MOCK
 
   constructor() { }
 
