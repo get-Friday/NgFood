@@ -1,0 +1,14 @@
+<main class="container">
+  <ul class="list-unstyled list-group list-group-horizontal">
+    <li *ngFor="let item of productList">
+      <div class="card" style="width: 18rem;">
+        <img [src]="item.photo" class="card-img-top" alt="placeholder">
+        <div class="card-body">
+          <h5 class="card-title">{{item.title}}</h5>
+          <p class="card-text">{{item.description}}</p>
+          <button class="btn btn-primary" (click)="alert(item.title)" >Exibir</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</main>

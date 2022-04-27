@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import Product from 'src/models/product.models';
-import PRODUCTS_MOCK from 'src/utils/product-mock';
+import Product from 'src/app/models/product.models';
+import PRODUCTS_MOCK from 'src/app/utils/product-mock';
 
 @Component({
   selector: 'NGF-content',
@@ -14,6 +14,10 @@ export class ContentComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  alert(name: string) {
+    alert(name)
   }
 
 }
