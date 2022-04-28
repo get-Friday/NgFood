@@ -9,6 +9,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { FoodListComponent } from './components/food-list/food-list.component';
 import { Route, RouterModule } from '@angular/router';
 import { FoodComponent } from './pages/food/food.component';
+import { DrinkListComponent } from './components/drink-list/drink-list.component';
+import { DrinkComponent } from './pages/drink/drink.component';
 
 const ROUTES: Route[] = [
   {
@@ -18,6 +20,10 @@ const ROUTES: Route[] = [
   {
     path: 'food',
     component: FoodComponent
+  },
+  {
+    path: 'drink',
+    component: DrinkComponent
   }
 ]
 
@@ -29,7 +35,9 @@ const ROUTES: Route[] = [
     ContentComponent,
     HomeComponent,
     FoodListComponent,
-    FoodComponent
+    FoodComponent,
+    DrinkListComponent,
+    DrinkComponent
   ],
   imports: [
     BrowserModule,
