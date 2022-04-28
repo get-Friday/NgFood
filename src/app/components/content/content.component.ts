@@ -9,15 +9,9 @@ import PRODUCTS_MOCK from 'src/app/utils/product-mock';
 })
 export class ContentComponent implements OnInit {
 
-  productList: Product[] = PRODUCTS_MOCK
-
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  alert(name: string) {
-    alert(name)
   }
 
 }
