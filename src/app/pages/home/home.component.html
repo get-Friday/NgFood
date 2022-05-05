@@ -1,1 +1,17 @@
-<NGF-content></NGF-content>
+<main>
+  <div class="container px-4 py-5">
+    <h2 class="pb-2 border-bottom">Cardápio</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+      <div *ngFor="let menu of listMenu" class="feature col">
+        <div class="feature-icon bg-primary bg-gradient">
+          <svg class="bi" width="1em" height="1em"></svg>
+        </div>
+        <h2>{{ menu.title }}</h2>
+        <p>{{ menu.description }}</p>
+        <a routerLink="{{ menu.link }}" class="icon-link">
+          Ver mais
+        </a>
+      </div>
+    </div>
+  </div>
+</main>

@@ -3,33 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Ng-Food": {
+    "ng-food": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss",
-          "skipTests": true
-        },
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:resolver": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
+          "style": "scss"
         },
         "@schematics/angular:application": {
           "strict": true
@@ -37,7 +15,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "NGF",
+      "prefix": "ngf",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -53,9 +31,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Ng-Food:build:production"
+              "browserTarget": "ng-food:build:production"
             },
             "development": {
-              "browserTarget": "Ng-Food:build:development"
+              "browserTarget": "ng-food:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -105,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Ng-Food:build"
+            "browserTarget": "ng-food:build"
           }
         },
         "test": {
@@ -129,5 +110,5 @@
       }
     }
   },
-  "defaultProject": "Ng-Food"
+  "defaultProject": "ng-food"
 }

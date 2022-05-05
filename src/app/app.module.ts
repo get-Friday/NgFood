@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { Route, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ContentComponent } from './components/content/content.component';
 import { HomeComponent } from './pages/home/home.component';
-import { FoodListComponent } from './components/food-list/food-list.component';
-import { Route, RouterModule } from '@angular/router';
-import { FoodComponent } from './pages/food/food.component';
-import { DrinkListComponent } from './components/drink-list/drink-list.component';
-import { DrinkComponent } from './pages/drink/drink.component';
+import { FoodListComponent } from './pages/food-list/food-list.component';
+import { DrinkListComponent } from './pages/drink-list/drink-list.component';
 
 const ROUTES: Route[] = [
   {
@@ -19,12 +16,12 @@ const ROUTES: Route[] = [
   },
   {
     path: 'food',
-    component: FoodComponent
+    component: FoodListComponent
   },
   {
     path: 'drink',
-    component: DrinkComponent
-  }
+    component: DrinkListComponent
+  },
 ]
 
 @NgModule({
@@ -32,12 +29,9 @@ const ROUTES: Route[] = [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    ContentComponent,
     HomeComponent,
     FoodListComponent,
-    FoodComponent,
-    DrinkListComponent,
-    DrinkComponent
+    DrinkListComponent
   ],
   imports: [
     BrowserModule,
