@@ -14,9 +14,11 @@ export class FoodListComponent implements OnInit {
   constructor(private http: HttpClient, private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.http.get<IFood[]>("http://localhost:3000/foods").subscribe((value: IFood[]) => {
-      this.foodList = value
-    })
+    this.http
+      .get<IFood[]>("http://localhost:3000/foods")
+      .subscribe((value: IFood[]) => {
+        this.foodList = value
+      })
   }
 
   addToCart(productName: string) {
