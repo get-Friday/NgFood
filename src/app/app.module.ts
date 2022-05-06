@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Route, RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -14,17 +15,17 @@ import { ItemMenuComponent } from './components/item-menu/item-menu.component';
 const ROUTES: Route[] = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'food',
-    component: FoodListComponent
+    component: FoodListComponent,
   },
   {
     path: 'drink',
-    component: DrinkListComponent
+    component: DrinkListComponent,
   },
-]
+];
 
 @NgModule({
   declarations: [
@@ -39,9 +40,10 @@ const ROUTES: Route[] = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
