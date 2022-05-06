@@ -10,7 +10,7 @@ export class ProductService {
 
   constructor() { }
 
-  getPurchase() {
+  cartSize() {
     return this.purchase.length
   }
 

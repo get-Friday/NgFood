@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'ngf-item-menu',
@@ -6,17 +7,16 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./item-menu.component.scss'],
 })
 export class ItemMenuComponent implements OnInit {
-  @Input()
-  photo: string = '';
+  @Input() photo: string = '';
+  @Input() name: string = '';
+  @Input() description: string = '';
+  @Input() price: number = 0;
 
-  @Input()
-  name: string = '';
+  @Output() clickItem = new EventEmitter();
 
-  @Input()
-  description: string = '';
-
-  @Input()
-  price: number = 0;
+  addDrink() {
+    this.clickItem.emit(this.name)
+  }
 
   constructor() {}
 
