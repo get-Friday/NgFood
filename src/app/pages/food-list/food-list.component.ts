@@ -1,6 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import IFood from 'src/app/models/food.model';
-import LIST_FOOD_MOCK from 'src/app/constants/foods-mock';
 
 @Component({
   selector: 'ngf-food-list',
@@ -8,11 +8,14 @@ import LIST_FOOD_MOCK from 'src/app/constants/foods-mock';
   styleUrls: ['./food-list.component.scss']
 })
 export class FoodListComponent implements OnInit {
-  foodList: IFood[] = LIST_FOOD_MOCK
+  foodList: IFood[] = []
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get<IFood[]>("http://localhost:3000/foods").subscribe((value: IFood[]) => {
+      this.foodList = value
+    })
   }
 
 }

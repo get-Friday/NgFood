@@ -1,0 +1,42 @@
+{
+  "drinks": [
+    {
+      "name": "Água",
+      "description": "Hidratem-se! 300ml",
+      "photo": "assets/agua.jpg",
+      "price": 3
+    },
+    {
+      "name": "Coca-cola",
+      "description": "Uma água menos saudável e mais cara 350ml",
+      "photo": "assets/coca.jpg",
+      "price": 8
+    },
+    {
+      "name": "Suco de uva",
+      "description": "Água com gosto de uva 1L",
+      "photo": "assets/sucouva.jpg",
+      "price": 12
+    }
+  ],
+  "foods": [
+    {
+      "name": "Peixe",
+      "description": "Peixe pacu grande 1.5kg",
+      "photo": "assets/peixe.jpg",
+      "price": 15
+    },
+    {
+      "name": "Queijo",
+      "description": "Queijo redondo amarelo 30cm diametro 1kg",
+      "photo": "assets/queijo.jpg",
+      "price": 27
+    },
+    {
+      "name": "Pizza",
+      "description": "O sabor é sortido aleatório",
+      "photo": "assets/pizza.jpg",
+      "price": 59.99
+    }
+  ]
+}
