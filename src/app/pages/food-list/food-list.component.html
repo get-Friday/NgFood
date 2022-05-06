@@ -1,14 +1,9 @@
 <ul class="list-unstyled list-group list-group-horizontal">
-  <li *ngFor="let food of foodList" class="p-2">
-    <div class="card" style="width: 18rem;">
-      <img [src]="food.photo" class="card-img-top" [alt]="food.name">
-      <div class="card-body">
-        <h5 class="card-title">{{food.name}}</h5>
-        <p class="card-text">{{food.description}}</p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">PREÇO: R${{food.price}}</li>
-      </ul>
-    </div>
-  </li>
+  <ngf-item-menu
+    *ngFor="let food of foodList"
+    [photo]="food.photo"
+    [name]="food.name"
+    [description]="food.description"
+    [price]="food.price"
+  ></ngf-item-menu>
 </ul>

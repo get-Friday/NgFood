@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FoodListComponent } from './pages/food-list/food-list.component';
 import { DrinkListComponent } from './pages/drink-list/drink-list.component';
+import { ItemMenuComponent } from './components/item-menu/item-menu.component';
 
 const ROUTES: Route[] = [
   {
@@ -32,7 +33,8 @@ const ROUTES: Route[] = [
     FooterComponent,
     HomeComponent,
     FoodListComponent,
-    DrinkListComponent
+    DrinkListComponent,
+    ItemMenuComponent,
   ],
   imports: [
     BrowserModule,
