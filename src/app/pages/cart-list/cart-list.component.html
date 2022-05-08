@@ -1,5 +1,5 @@
 <h1 class="ms-4">Carrinho:</h1>
-<ul class="list-group ms-5" style="width: 33%;">
+<ul class="list-group ms-5" style="width: 33vw;">
   <li
     *ngFor="let item of cartList"
     class="list-group-item flex-clumn align-items-start"
@@ -9,6 +9,8 @@
       <small class="text-muted">qnt: {{ item.quantity }}</small>
     </div>
     <p class="mb-1">{{ item.description }}</p>
-    <p>Preço: <b>R${{ item.price * item.quantity }}</b></p>
-  </li>
+    <div class="d-flex w-100 justify-content-between">
+      <p>Preço unitário: <b>R${{ item.price }}</b></p>
+      <button type="button" class="btn btn-outline-danger btn-sm" (click)="removeProduct(item.name)">remover</button>
+    </div>
 </ul>

@@ -15,22 +15,22 @@ export class ProductService {
   }
 
   insertProduct(product: IDrink | IFood) {
-    const find = this.purchase.find(e => e.name == product.name)
+    const find = this.purchase.find((e) => e.name == product.name);
 
     if (find) {
-      find.quantity++
-      return
+      find.quantity++;
+      return;
     }
 
-    this.purchase.push(product)
+    this.purchase.push(product);
   }
 
   clearPurchase() {
     this.purchase = [];
   }
 
-  removeProduct(product: IDrink | IFood) {
-    const productIndex = this.purchase.findIndex((e) => e.name == product.name);
+  removeProduct(productName: string) {
+    const productIndex = this.purchase.findIndex((e) => e.name == productName);
     this.purchase.splice(productIndex, 1);
   }
 }
