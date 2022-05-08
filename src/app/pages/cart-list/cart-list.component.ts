@@ -24,4 +24,12 @@ export class CartListComponent implements OnInit {
     this.productService.clearPurchase()
     this.cartList = this.productService.purchase
   }
+
+  cartAdd(productName: string) {
+    this.productService.addProductQuantity(productName)
+  }
+
+  cartRemove(productName: string) {
+    this.productService.removeProductQuantity(productName)
+  }
 }

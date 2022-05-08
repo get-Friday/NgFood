@@ -14,14 +14,30 @@ export class ProductService {
     return this.purchase.length;
   }
 
-  insertProduct(product: IDrink | IFood) {
-    const find = this.purchase.find((e) => e.name == product.name);
-
+  addProductQuantity(productName: string) {
+    const find = this.purchase.find((e) => e.name == productName);
     if (find) {
       find.quantity++;
+    }
+  }
+
+  removeProductQuantity(productName: string) {
+    const find = this.purchase.find((e) => e.name == productName);
+    if (find) {
+      if (find.quantity < 2) {
+        this.removeProduct(find.name);
+        return;
+      }
+
+      find.quantity--;
+    }
+  }
+
+  insertProduct(product: IDrink | IFood) {
+    if (this.purchase.some((e) => e.name == product.name)) {
+      this.addProductQuantity(product.name);
       return;
     }
-
     this.purchase.push(product);
   }
 
