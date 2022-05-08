@@ -6,9 +6,9 @@
   >
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{{ item.name }}</h5>
-      <small class="text-muted">qnt</small>
+      <small class="text-muted">qnt: {{ item.quantity }}</small>
     </div>
     <p class="mb-1">{{ item.description }}</p>
-    <p>Preço: <b>R${{ item.price }}</b></p>
+    <p>Preço: <b>R${{ item.price * item.quantity }}</b></p>
   </li>
 </ul>

@@ -3,4 +3,5 @@ export default interface IFood {
   description: string;
   photo: string;
   price: number;
+  quantity: number;
 }
