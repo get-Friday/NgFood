@@ -1,36 +1,63 @@
-<div [ngSwitch]="cartList.length">
-  <h1 *ngSwitchCase="0" class="ms-4">Carrinho Vazio</h1>
-  <div *ngSwitchDefault class="ms-4">
-    <h1>Carrinho:</h1>
-    <p id="clearCart" (click)="clearCart()">Limpar carrinho <mat-icon>delete_outline</mat-icon></p>
-  </div>
-</div>
-
-<ul class="list-group ms-5" style="width: 33vw">
-  <li
-    *ngFor="let item of cartList"
-    class="list-group-item flex-clumn align-items-start"
-  >
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">{{ item.name }}</h5>
-      <div class="d-flex align-items-center">
-        <mat-icon (click)="cartAdd(item.name)">add</mat-icon>
-        {{ item.quantity }}
-        <mat-icon (click)="cartRemove(item.name)">remove</mat-icon>
+<div class="d-flex">
+  <section>
+    <div [ngSwitch]="cartList.length">
+      <h1 *ngSwitchCase="0" class="ms-4">Carrinho Vazio</h1>
+      <div *ngSwitchDefault class="ms-4">
+        <h1>Carrinho:</h1>
+        <p id="clearCart" (click)="clearCart()">Limpar carrinho <mat-icon>delete_outline</mat-icon></p>
       </div>
     </div>
-    <p class="mb-1">{{ item.description }}</p>
-    <div class="d-flex w-100 justify-content-between">
-      <p>
-        Preço unitário: <b>R${{ item.price }}</b>
-      </p>
-      <button
-        type="button"
-        class="btn btn-outline-danger btn-sm"
-        (click)="removeProduct(item.name)"
+
+    <ul class="list-group ms-5" style="width: 33vw">
+      <li
+        *ngFor="let item of cartList"
+        class="list-group-item flex-clumn align-items-start"
       >
-        remover
-      </button>
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ item.name }}</h5>
+          <div class="d-flex align-items-center">
+            <mat-icon (click)="cartAdd(item.name)">add</mat-icon>
+            {{ item.quantity }}
+            <mat-icon (click)="cartRemove(item.name)">remove</mat-icon>
+          </div>
+        </div>
+        <p class="mb-1">{{ item.description }}</p>
+        <div class="d-flex w-100 justify-content-between">
+          <p>
+            Preço unitário: <b>R${{ item.price }}</b>
+          </p>
+          <button
+            type="button"
+            class="btn btn-outline-danger btn-sm"
+            (click)="removeProduct(item.name)"
+          >
+            remover
+          </button>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section *ngIf="cartList.length" class="w-100">
+    <div class="jumbotron jumbotron-fluid w-100">
+      <div class="container">
+        <h1 class="display-4">Seu pedido</h1>
+        <ul class="list-group">
+          <li
+            *ngFor="let item of cartList"
+            class="list-group-item"
+          >
+            <div class="d-flex justify-content-between">
+              <p>{{ item.name }}</p>
+              <p>{{ item.quantity}} x R${{ item.price }}</p>
+            </div>
+          </li>
+        </ul>
+        <hr class="my-4">
+        <div class="d-flex w-100 justify-content-end">
+          <h1>Total: {{ getTotalPrice() }}</h1>
+        </div>
+      </div>
     </div>
-  </li>
-</ul>
+  </section>
+</div>

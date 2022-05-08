@@ -32,4 +32,17 @@ export class CartListComponent implements OnInit {
   cartRemove(productName: string) {
     this.productService.removeProductQuantity(productName)
   }
+
+  getTotalPrice(): string {
+    const BRL = new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    })
+
+    const totalPrice = this.cartList.reduce((p, c) =>
+      p + (c.price * c.quantity), 0
+    )
+
+    return BRL.format(totalPrice)
+  }
 }
