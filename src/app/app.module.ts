@@ -11,6 +11,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { FoodListComponent } from './pages/food-list/food-list.component';
 import { DrinkListComponent } from './pages/drink-list/drink-list.component';
 import { ItemMenuComponent } from './components/item-menu/item-menu.component';
+import { CartListComponent } from './pages/cart-list/cart-list.component';
 
 const ROUTES: Route[] = [
   {
@@ -25,6 +26,10 @@ const ROUTES: Route[] = [
     path: 'drink',
     component: DrinkListComponent,
   },
+  {
+    path: 'cart',
+    component: CartListComponent,
+  },
 ];
 
 @NgModule({
@@ -36,6 +41,7 @@ const ROUTES: Route[] = [
     FoodListComponent,
     DrinkListComponent,
     ItemMenuComponent,
+    CartListComponent,
   ],
   imports: [
     BrowserModule,

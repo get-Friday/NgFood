@@ -2,10 +2,10 @@
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="">Cardápio Angular</a>
   </div>
-  <div class="d-flex flex-row">
+  <div class="d-flex flex-row" routerLink="cart">
     <mat-icon>shopping_cart</mat-icon>
     <span
-      *ngIf="qntProducts"
+     *ngIf="getCart()"
       class="badge bg-primary rounded-pill ms-2"
     >
       {{ getCart() }}
