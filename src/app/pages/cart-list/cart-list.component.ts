@@ -39,8 +39,8 @@ export class CartListComponent implements OnInit {
       currency: 'BRL'
     })
 
-    const totalPrice = this.cartList.reduce((p, c) =>
-      p + (c.price * c.quantity), 0
+    const totalPrice = this.cartList.reduce((subtotal, item) =>
+      subtotal + (item.price * item.quantity), 0
     )
 
     return BRL.format(totalPrice)
