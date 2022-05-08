@@ -19,4 +19,9 @@ export class CartListComponent implements OnInit {
   removeProduct(productName: string) {
     this.productService.removeProduct(productName)
   }
+
+  clearCart(){
+    this.productService.clearPurchase()
+    this.cartList = this.productService.purchase
+  }
 }

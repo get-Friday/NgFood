@@ -1,5 +1,12 @@
-<h1 class="ms-4">Carrinho:</h1>
-<ul class="list-group ms-5" style="width: 33vw;">
+<div [ngSwitch]="cartList.length">
+  <h1 *ngSwitchCase="0" class="ms-4">Carrinho Vazio</h1>
+  <div *ngSwitchDefault class="ms-4">
+    <h1>Carrinho:</h1>
+    <p id="clearCart" (click)="clearCart()">Limpar carrinho <mat-icon>delete_outline</mat-icon></p>
+  </div>
+</div>
+
+<ul class="list-group ms-5" style="width: 33vw">
   <li
     *ngFor="let item of cartList"
     class="list-group-item flex-clumn align-items-start"
@@ -10,7 +17,16 @@
     </div>
     <p class="mb-1">{{ item.description }}</p>
     <div class="d-flex w-100 justify-content-between">
-      <p>Preço unitário: <b>R${{ item.price }}</b></p>
-      <button type="button" class="btn btn-outline-danger btn-sm" (click)="removeProduct(item.name)">remover</button>
+      <p>
+        Preço unitário: <b>R${{ item.price }}</b>
+      </p>
+      <button
+        type="button"
+        class="btn btn-outline-danger btn-sm"
+        (click)="removeProduct(item.name)"
+      >
+        remover
+      </button>
     </div>
+  </li>
 </ul>
